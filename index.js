@@ -9,7 +9,6 @@ const server = express();
 server.use(express.json());
 
 mongoose
-  // .connect("mongodb://localhost:27017/jobapp")
   .connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.ugkcmbj.mongodb.net/`)
   .then(() => {
     console.log("databasde connect successfully");
@@ -21,5 +20,5 @@ mongoose
 server.use("/api/v1/job/", router);
 const port = 10000;
 server.listen(port, () => {
-  console.log("server is up and running on port 5000");
+  console.log("server is up and running on port 1000");
 });
